@@ -1,6 +1,3 @@
-import sympy
-
-
 def get_ciphered(n: int, e: int, m: int) -> int:
     c = pow(m, e, n)
     return (c)
@@ -16,8 +13,22 @@ def get_q_and_phi_from_p(n: int, p: int) -> (int, int):
     return (int(q), phi_n)
 
 
+def egcd(a, b):
+    if a == 0:
+        return (b, 0, 1)
+    g, y, x = egcd(b % a, a)
+    return (g, x - (b//a) * y, y)
+
+
+def modinv(a, m):
+    g, x, y = egcd(a, m)
+    if g != 1:
+        raise Exception('No modular inverse')
+    return x % m
+
+
 def get_d_from_phi_n(e: int, phi_n: int) -> int:
-    d = sympy.mod_inverse(e, phi_n)
+    d = modinv(e, phi_n)
     return d
 
 
