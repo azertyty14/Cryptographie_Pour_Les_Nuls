@@ -173,10 +173,14 @@ class AES:
             
 if __name__ == "__main__":
     a = AES("a05a4f987eb505650089a10f5b208f03")
+    print("Etat initiale\n")
     a.print_state()
     a.SubBytes()
+    print("Après SubBytes\n") 
     a.print_state()
     a.ShiftRow()
+    print("Après ShiftRow\n")
     a.print_state()
     a.MixColumn()
+    print("Après MixColumn")
     a.print_state()
