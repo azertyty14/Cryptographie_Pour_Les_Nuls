@@ -5,7 +5,7 @@ def get_ciphered(n: int, e: int, m: int) -> int:
 
 def get_q_and_phi_from_p(n: int, p: int) -> (int, int):
     q = n/p
-    if q != int(q):
+    if p*q != n:
         print("Error, n/p is not an int !!")
     else:
         q = int(q)
