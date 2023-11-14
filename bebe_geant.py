@@ -19,7 +19,7 @@ def bebe_geant(y : int, g : int, n : int):
     g un générateur du groupe
     n l'ordre du groupe
     """
-    m = int(math.sqrt(n) + 1)
+    m = int(math.sqrt(n))
     print("calcul du dictionnaire")
     d = dict()
     for i in range(m):
